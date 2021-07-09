@@ -1,11 +1,18 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap'
+import { Route } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap';
+import SearchBox from './SearchBox';
 import { logout } from '../actions/userActions'
+
+
 
 const Header = () => {
     const dispatch = useDispatch()
+
+    const cart = useSelector(state => state.cart)
+    const { cartItems } = cart
 
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
@@ -14,19 +21,34 @@ const Header = () => {
         dispatch(logout())
     }
 
+    const getCartCount = () => {
+        return cartItems.reduce((qty, item) => qty + item.qty, 0)
+    }
+
     return (
         <header>
             <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
                 <Container>
-                    <LinkContainer to='/'>
-                        <Navbar.Brand>Ububake Shop</Navbar.Brand>
+                    <LinkContainer to='/'>                      
+                        <Navbar.Brand>
+                            <Image src={'/images/logo2.jpg'} className='logo2' />    
+                        </Navbar.Brand>                          
                     </LinkContainer>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>
+                        
+                            <Route render={({ history }) => <SearchBox history={history} />} />
+                        
                         <Nav className='ml-auto'>
                             <LinkContainer to='/cart'>
+                                <Nav.Link>                         
+                                    <span className='cartlogo_badge'>{getCartCount()}</span>    
+                                    <i className='fas fa-shopping-cart'></i>                                   
+                                </Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to='/about'>
                                 <Nav.Link>
-                                    <i className='fas fa-shopping-cart'></i> Cart
+                                    About Us
                                 </Nav.Link>
                             </LinkContainer>
                             {userInfo ? (
