@@ -13,7 +13,8 @@ function AboutScreen() {
                         </div>
                         <div id="content">
                             <h3>UBU BAKE</h3>
-                            <p>UBU BAKE offers a homestyle Bakery experience in the Country.
+                            <p>
+                                UBU BAKE offers a homestyle Bakery experience in the Country.
                                 We take pride in our natural ingredients for our Bread and Pastry. Our Vision is to create upscale, quick-delivery service with a focus on simple and satisfying Dessert and Baked goods. 
                             </p>
                             <p>

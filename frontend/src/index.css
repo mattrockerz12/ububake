@@ -66,7 +66,7 @@ h2 {
 }
 
 .carousel-inner {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .carousel-background {
@@ -119,12 +119,10 @@ body {
 
 #section {
   width: 100%;
-  min-height: 140vh;
   background-color: #ddd;
 }
 
 .content-section {
-  height: 320px;
   width: 100%;
   text-align: center;
 }
@@ -132,11 +130,8 @@ body {
 #content p {
   margin-top: 10px;
   font-size: 25px;
-  font-family: DejaVu Sans Mono, monospace;
   line-height: 1.5;
-  text-align: justify;
   color: black;
-  float: left;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -151,40 +146,9 @@ body {
   font-size: 28px;
 }
 
-#ububake {
-  position: relative;
-  top: 30px;
-  width: 700px;
-  height: 400px;
-}
-
-@media only screen and (max-width: 1200px) {
-  #ububake {
-    position: relative;
-    width: 600px;
-    height: 300px;
-  }
-
-  .section {
-    min-height: 80vh;
-  }
-}
-
 @media only screen and (max-width: 768px) {
-  #ububake {
-    position: relative;
-    width: 430px;
-    height: 220px;
-  }
-
-  .section {
-    min-height: 80vh;
-  }
-
   #content p {
-    margin-top: 10px;
-    font-size: 23px;
+    font-size: 20px;
     line-height: 1.3;
-    text-align: justify;
   }
 }
